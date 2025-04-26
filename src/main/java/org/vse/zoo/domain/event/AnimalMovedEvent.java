@@ -1,38 +1,38 @@
 package org.vse.zoo.domain.event;
 
 import org.jetbrains.annotations.NotNull;
-import org.vse.zoo.domain.model.animal.entity.AnimalEntity;
-import org.vse.zoo.domain.model.enclosure.entity.EnclosureEntity;
+import org.vse.zoo.domain.model.animal.entity.Animal;
+import org.vse.zoo.domain.model.enclosure.entity.Enclosure;
 import org.vse.zoo.domain.shared.DomainEvent;
 
 public class AnimalMovedEvent implements DomainEvent {
     @NotNull
-    private final AnimalEntity animal;
+    private final Animal animal;
     @NotNull
-    private final EnclosureEntity sourceEnclosure;
+    private final Enclosure sourceEnclosure;
     @NotNull
-    private final EnclosureEntity destinationEnclosure;
+    private final Enclosure destinationEnclosure;
 
-    public AnimalMovedEvent(@NotNull AnimalEntity animal,
-                            @NotNull EnclosureEntity sourceEnclosure,
-                            @NotNull EnclosureEntity destinationEnclosure) {
+    public AnimalMovedEvent(@NotNull Animal animal,
+                            @NotNull Enclosure sourceEnclosure,
+                            @NotNull Enclosure destinationEnclosure) {
         this.animal = animal;
         this.sourceEnclosure = sourceEnclosure;
         this.destinationEnclosure = destinationEnclosure;
     }
 
     @NotNull
-    public AnimalEntity getAnimal() {
+    public Animal getAnimal() {
         return animal;
     }
 
     @NotNull
-    public EnclosureEntity getSourceEnclosure() {
+    public Enclosure getSourceEnclosure() {
         return sourceEnclosure;
     }
 
     @NotNull
-    public EnclosureEntity getDestinationEnclosure() {
+    public Enclosure getDestinationEnclosure() {
         return destinationEnclosure;
     }
 }

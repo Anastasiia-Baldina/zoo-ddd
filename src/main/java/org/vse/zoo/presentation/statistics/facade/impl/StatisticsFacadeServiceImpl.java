@@ -1,6 +1,6 @@
 package org.vse.zoo.presentation.statistics.facade.impl;
 
-import org.vse.zoo.application.service.ZooStatisticsService;
+import org.vse.zoo.application.service.statistics.ZooStatisticsService;
 import org.vse.zoo.presentation.statistics.assembler.StatisticsDtoAssembler;
 import org.vse.zoo.presentation.statistics.dto.AvailableEnclosureDto;
 import org.vse.zoo.presentation.statistics.dto.EmptyEnclosureDto;

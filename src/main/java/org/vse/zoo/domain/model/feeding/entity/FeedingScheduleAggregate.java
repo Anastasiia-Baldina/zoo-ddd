@@ -13,7 +13,7 @@ import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-public class FeedingScheduleAggregate implements EntityAggregate<FeedingScheduleEntity> {
+public class FeedingScheduleAggregate implements EntityAggregate<FeedingSchedule> {
     @NotNull
     private final UUID uid;
     @Nullable
@@ -27,7 +27,7 @@ public class FeedingScheduleAggregate implements EntityAggregate<FeedingSchedule
         this.uid = Asserts.notNull(uid, "uid");
     }
 
-    public FeedingScheduleAggregate(FeedingScheduleEntity entity) {
+    public FeedingScheduleAggregate(FeedingSchedule entity) {
         Asserts.notNull(entity, "entity");
         uid = entity.getUid();
         recipient = entity.getRecipient();
@@ -37,8 +37,8 @@ public class FeedingScheduleAggregate implements EntityAggregate<FeedingSchedule
 
     @NotNull
     @Override
-    public FeedingScheduleEntity buildRootEntity() {
-        return new FeedingScheduleEntity(
+    public FeedingSchedule buildRootEntity() {
+        return new FeedingSchedule(
                 uid,
                 Asserts.notNull(recipient, "recipient"),
                 Asserts.notNull(schedule, "schedule"),

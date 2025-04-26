@@ -3,11 +3,11 @@ package org.vse.zoo.presentation.animal.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.vse.zoo.application.service.AnimalService;
-import org.vse.zoo.application.service.EnclosureService;
-import org.vse.zoo.application.service.FeedingOrganizationService;
+import org.vse.zoo.application.service.animal.AnimalService;
+import org.vse.zoo.application.service.enclosure.EnclosureService;
+import org.vse.zoo.application.service.feeding.FeedingOrganizationService;
 import org.vse.zoo.application.transaction.TransactionManager;
-import org.vse.zoo.presentation.animal.controller.AnimalController;
+import org.vse.zoo.presentation.animal.web.AnimalController;
 import org.vse.zoo.presentation.animal.facade.AnimalFacadeService;
 import org.vse.zoo.presentation.animal.facade.impl.AnimalFacadeServiceImpl;
 

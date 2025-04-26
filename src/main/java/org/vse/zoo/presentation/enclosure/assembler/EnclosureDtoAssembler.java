@@ -3,7 +3,7 @@ package org.vse.zoo.presentation.enclosure.assembler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.vse.zoo.domain.model.enclosure.entity.EnclosureAggregate;
-import org.vse.zoo.domain.model.enclosure.entity.EnclosureEntity;
+import org.vse.zoo.domain.model.enclosure.entity.Enclosure;
 import org.vse.zoo.domain.model.enclosure.valobj.Compatibility;
 import org.vse.zoo.domain.model.enclosure.valobj.EnclosureSize;
 import org.vse.zoo.presentation.enclosure.dto.EnclosureDto;
@@ -12,7 +12,7 @@ import org.vse.zoo.presentation.enclosure.dto.ResultDto;
 public class EnclosureDtoAssembler {
 
     @Nullable
-    public EnclosureDto toDto(@Nullable EnclosureEntity entity) {
+    public EnclosureDto toDto(@Nullable Enclosure entity) {
         if(entity == null) {
             return null;
         }
@@ -37,7 +37,7 @@ public class EnclosureDtoAssembler {
         return dto;
     }
 
-    public EnclosureEntity fromDto(EnclosureDto dto) {
+    public Enclosure fromDto(EnclosureDto dto) {
         var size = EnclosureSize.builder()
                 .setHeight(dto.getHeight())
                 .setWidth(dto.getWidth())

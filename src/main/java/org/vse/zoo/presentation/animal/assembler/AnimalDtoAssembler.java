@@ -3,7 +3,7 @@ package org.vse.zoo.presentation.animal.assembler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.vse.zoo.domain.model.animal.entity.AnimalAggregate;
-import org.vse.zoo.domain.model.animal.entity.AnimalEntity;
+import org.vse.zoo.domain.model.animal.entity.Animal;
 import org.vse.zoo.domain.model.animal.valobj.HealthState;
 import org.vse.zoo.domain.model.animal.valobj.Location;
 import org.vse.zoo.domain.model.animal.valobj.Profile;
@@ -14,7 +14,7 @@ import org.vse.zoo.presentation.animal.dto.ResultDto;
 public class AnimalDtoAssembler {
 
     @Nullable
-    public AnimalDto toDto(@Nullable AnimalEntity entity) {
+    public AnimalDto toDto(@Nullable Animal entity) {
         if(entity == null) {
             return null;
         }
@@ -37,7 +37,7 @@ public class AnimalDtoAssembler {
     }
 
     @NotNull
-    public AnimalEntity fromDto(@NotNull AnimalDto dto) {
+    public Animal fromDto(@NotNull AnimalDto dto) {
         var animalUid = dto.getUid();
         var profile = Profile.builder()
                 .setAnimalType(dto.getAnimalType())

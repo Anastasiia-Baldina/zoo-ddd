@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.UUID;
 
-public class EnclosureAggregate implements EntityAggregate<EnclosureEntity> {
+public class EnclosureAggregate implements EntityAggregate<Enclosure> {
     @NotNull
     private final UUID uid;
     @Nullable
@@ -37,7 +37,7 @@ public class EnclosureAggregate implements EntityAggregate<EnclosureEntity> {
         compatibilities = new ArrayList<>();
     }
 
-    public EnclosureAggregate(EnclosureEntity entity) {
+    public EnclosureAggregate(Enclosure entity) {
         Asserts.notNull(entity, "entity");
         uid = entity.getUid();
         capacity = entity.getCapacity();
@@ -49,8 +49,8 @@ public class EnclosureAggregate implements EntityAggregate<EnclosureEntity> {
 
     @NotNull
     @Override
-    public EnclosureEntity buildRootEntity() {
-        return new EnclosureEntity(
+    public Enclosure buildRootEntity() {
+        return new Enclosure(
                 uid,
                 Asserts.notNull(capacity, "capacity"),
                 Asserts.notNull(type, "type"),

@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.vse.zoo.domain.model.animal.service.AnimalRepository;
-import org.vse.zoo.domain.model.enclosure.service.EnclosureRepository;
-import org.vse.zoo.domain.model.feeding.service.FeedingRepository;
+import org.vse.zoo.infrastructure.animal.AnimalRepository;
+import org.vse.zoo.infrastructure.enclosure.EnclosureRepository;
+import org.vse.zoo.infrastructure.feeding.FeedingRepository;
 import org.vse.zoo.presentation.DataUtils;
 import org.vse.zoo.presentation.animal.dto.*;
 

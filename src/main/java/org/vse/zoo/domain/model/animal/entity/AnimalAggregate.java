@@ -15,7 +15,7 @@ import java.time.Instant;
 import java.util.Objects;
 import java.util.UUID;
 
-public class AnimalAggregate implements EntityAggregate<AnimalEntity> {
+public class AnimalAggregate implements EntityAggregate<Animal> {
     @NotNull
     private final UUID uid;
     @Nullable
@@ -33,7 +33,7 @@ public class AnimalAggregate implements EntityAggregate<AnimalEntity> {
         this.uid = Asserts.notNull(uid, "uid");
     }
 
-    public AnimalAggregate(AnimalEntity animalEntity) {
+    public AnimalAggregate(Animal animalEntity) {
         Asserts.notNull(animalEntity, "animalEntity");
         uid = animalEntity.getUid();
         location = animalEntity.getLocation();
@@ -45,8 +45,8 @@ public class AnimalAggregate implements EntityAggregate<AnimalEntity> {
 
     @Override
     @NotNull
-    public AnimalEntity buildRootEntity() {
-        return new AnimalEntity(
+    public Animal buildRootEntity() {
+        return new Animal(
                 uid,
                 Asserts.notNull(location, "location"),
                 Asserts.notNull(healthState, "healthState"),
@@ -117,7 +117,7 @@ public class AnimalAggregate implements EntityAggregate<AnimalEntity> {
                 .valid();
     }
 
-    public void treatAnimal() {
+    public void treat() {
         if (healthState == null) {
             throw new BusinessLogicException("Невозможно лечить животное, так как состояние здоровья не известно");
         }

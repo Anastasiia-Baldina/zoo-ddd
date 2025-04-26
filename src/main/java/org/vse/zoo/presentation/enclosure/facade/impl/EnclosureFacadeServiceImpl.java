@@ -1,7 +1,7 @@
 package org.vse.zoo.presentation.enclosure.facade.impl;
 
-import org.vse.zoo.application.service.AnimalTransferService;
-import org.vse.zoo.application.service.EnclosureService;
+import org.vse.zoo.application.service.enclosure.AnimalTransferService;
+import org.vse.zoo.application.service.enclosure.EnclosureService;
 import org.vse.zoo.application.transaction.TransactionManager;
 import org.vse.zoo.application.utils.Asserts;
 import org.vse.zoo.presentation.enclosure.assembler.EnclosureDtoAssembler;

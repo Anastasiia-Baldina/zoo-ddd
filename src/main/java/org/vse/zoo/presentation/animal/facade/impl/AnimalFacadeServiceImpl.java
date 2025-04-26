@@ -1,9 +1,9 @@
 package org.vse.zoo.presentation.animal.facade.impl;
 
 import org.vse.zoo.application.exception.BusinessLogicException;
-import org.vse.zoo.application.service.AnimalService;
-import org.vse.zoo.application.service.EnclosureService;
-import org.vse.zoo.application.service.FeedingOrganizationService;
+import org.vse.zoo.application.service.animal.AnimalService;
+import org.vse.zoo.application.service.enclosure.EnclosureService;
+import org.vse.zoo.application.service.feeding.FeedingOrganizationService;
 import org.vse.zoo.application.transaction.TransactionManager;
 import org.vse.zoo.application.utils.Asserts;
 import org.vse.zoo.domain.model.animal.entity.AnimalAggregate;
@@ -113,7 +113,7 @@ public class AnimalFacadeServiceImpl implements AnimalFacadeService {
                 throw new BusinessLogicException(err);
             }
             var aggregate = new AnimalAggregate(animal);
-            aggregate.treatAnimal();
+            aggregate.treat();
             animalService.updateAnimal(aggregate.buildRootEntity());
             var resVal = dtoAssembler.toDto(animalService.findByUid(animalUid));
             return dtoAssembler.toResultDto(resVal);

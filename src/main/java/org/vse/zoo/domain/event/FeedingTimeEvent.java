@@ -1,19 +1,19 @@
 package org.vse.zoo.domain.event;
 
 import org.jetbrains.annotations.NotNull;
-import org.vse.zoo.domain.model.animal.entity.AnimalEntity;
+import org.vse.zoo.domain.model.animal.entity.Animal;
 import org.vse.zoo.domain.shared.DomainEvent;
 
 public class FeedingTimeEvent implements DomainEvent {
     @NotNull
-    private final AnimalEntity animal;
+    private final Animal animal;
 
-    public FeedingTimeEvent(@NotNull AnimalEntity animal) {
+    public FeedingTimeEvent(@NotNull Animal animal) {
         this.animal = animal;
     }
 
     @NotNull
-    public AnimalEntity getAnimal() {
+    public Animal getAnimal() {
         return animal;
     }
 }

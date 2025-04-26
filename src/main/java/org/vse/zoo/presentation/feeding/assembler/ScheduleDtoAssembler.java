@@ -3,7 +3,7 @@ package org.vse.zoo.presentation.feeding.assembler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.vse.zoo.domain.model.feeding.entity.FeedingScheduleAggregate;
-import org.vse.zoo.domain.model.feeding.entity.FeedingScheduleEntity;
+import org.vse.zoo.domain.model.feeding.entity.FeedingSchedule;
 import org.vse.zoo.domain.model.feeding.valobj.Recipient;
 import org.vse.zoo.domain.model.feeding.valobj.Schedule;
 import org.vse.zoo.domain.model.feeding.valobj.Timer;
@@ -13,7 +13,7 @@ import org.vse.zoo.presentation.feeding.dto.FeedingScheduleDto;
 public class ScheduleDtoAssembler {
 
     @Nullable
-    public FeedingScheduleDto toDto(@Nullable FeedingScheduleEntity entity) {
+    public FeedingScheduleDto toDto(@Nullable FeedingSchedule entity) {
         if(entity == null) {
             return null;
         }
@@ -32,7 +32,7 @@ public class ScheduleDtoAssembler {
         return dto;
     }
 
-    public FeedingScheduleEntity fromDto(FeedingScheduleDto dto) {
+    public FeedingSchedule fromDto(FeedingScheduleDto dto) {
         return new FeedingScheduleAggregate(dto.getUid())
                 .setTimer(Timer.builder()
                         .setEnabled(dto.isEnabled())

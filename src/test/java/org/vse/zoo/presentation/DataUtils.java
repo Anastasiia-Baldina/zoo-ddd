@@ -1,16 +1,16 @@
 package org.vse.zoo.presentation;
 
 import org.vse.zoo.domain.model.animal.entity.AnimalAggregate;
-import org.vse.zoo.domain.model.animal.entity.AnimalEntity;
+import org.vse.zoo.domain.model.animal.entity.Animal;
 import org.vse.zoo.domain.model.animal.valobj.HealthState;
 import org.vse.zoo.domain.model.animal.valobj.Location;
 import org.vse.zoo.domain.model.animal.valobj.Profile;
 import org.vse.zoo.domain.model.animal.valobj.Requirement;
 import org.vse.zoo.domain.model.enclosure.entity.EnclosureAggregate;
-import org.vse.zoo.domain.model.enclosure.entity.EnclosureEntity;
+import org.vse.zoo.domain.model.enclosure.entity.Enclosure;
 import org.vse.zoo.domain.model.enclosure.valobj.EnclosureSize;
 import org.vse.zoo.domain.model.feeding.entity.FeedingScheduleAggregate;
-import org.vse.zoo.domain.model.feeding.entity.FeedingScheduleEntity;
+import org.vse.zoo.domain.model.feeding.entity.FeedingSchedule;
 import org.vse.zoo.domain.model.feeding.valobj.Recipient;
 import org.vse.zoo.domain.model.feeding.valobj.Schedule;
 import org.vse.zoo.domain.model.feeding.valobj.Timer;
@@ -48,7 +48,7 @@ public final class DataUtils {
         return dto;
     }
 
-    public static AnimalEntity monkeyMarusia(UUID enclosureUid) {
+    public static Animal monkeyMarusia(UUID enclosureUid) {
         return new AnimalAggregate(UUID.randomUUID())
                 .setHealthState(HealthState.builder()
                         .setHealthy(true)
@@ -69,11 +69,11 @@ public final class DataUtils {
                 .buildRootEntity();
     }
 
-    public static EnclosureEntity monkeyEnclosure() {
+    public static Enclosure monkeyEnclosure() {
         return monkeyEnclosure(UUID.randomUUID(), 1);
     }
 
-    public static EnclosureEntity monkeyEnclosure(UUID enclosureUid, int maxCount) {
+    public static Enclosure monkeyEnclosure(UUID enclosureUid, int maxCount) {
         return new EnclosureAggregate(enclosureUid)
                 .setCompatibilities(List.of("обезьяна"))
                 .setType("вольер")
@@ -86,7 +86,7 @@ public final class DataUtils {
                 .buildRootEntity();
     }
 
-    public static EnclosureEntity crocodileEnclosure() {
+    public static Enclosure crocodileEnclosure() {
         return new EnclosureAggregate(UUID.randomUUID())
                 .setCompatibilities(List.of("крокодил"))
                 .setType("вольер")
@@ -111,7 +111,7 @@ public final class DataUtils {
         return dto;
     }
 
-    public static EnclosureEntity overflowEnclosure(UUID uid) {
+    public static Enclosure overflowEnclosure(UUID uid) {
         return new EnclosureAggregate(uid)
                 .setCompatibilities(List.of("обезьяна"))
                 .setType("вольер")
@@ -125,7 +125,7 @@ public final class DataUtils {
                 .buildRootEntity();
     }
 
-    public static FeedingScheduleEntity monkeySchedule(UUID monkeyUid) {
+    public static FeedingSchedule monkeySchedule(UUID monkeyUid) {
         return new FeedingScheduleAggregate(UUID.randomUUID())
                 .setRecipient(Recipient.builder()
                         .setAnimalUid(monkeyUid)
